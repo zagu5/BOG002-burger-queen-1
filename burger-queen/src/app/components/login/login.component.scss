@@ -1,0 +1,96 @@
+@import "../../../variables.scss";
+
+.login-container{
+  width: 600px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 58px auto;
+  background: $gradienteBlack;
+  border-radius: 25px;
+}
+
+.login-logo-container{
+  width: 600px;
+  height: auto;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.logo{
+  width: 70%;
+  height: auto;
+}
+
+.login-form-container{
+  width: 600px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  form{
+    width: 70%;
+    height: 200px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    input{
+      width: 350px;
+      height: 40px;
+      margin: 0 auto 15px auto;
+      border-radius: 15px;
+      border: 2px solid $yellow;
+      padding: 0px 12px;
+      font-size: 14px;
+
+      ::-webkit-input-placeholder{
+        color: $gradienteBlack;
+      }
+    }
+  }
+
+  div{
+    width: 70%;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 16px;
+
+    p{
+      color: $yellow;
+      font-weight: normal;
+    }
+
+    a{
+      text-decoration: none;
+      color: $yellow;
+      font-weight: 700;
+    }
+  }
+}
+
+.button-login{
+  width: 378px;
+  height: 44px;
+  background: $yellow;
+  margin:0 auto;
+  padding: 0px 12px;
+  border-radius: 15px;
+  border: 2px solid $yellow;
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+
+}
+
+.button-login:hover{
+  background-color: $black;
+  color: $yellow;
+}
