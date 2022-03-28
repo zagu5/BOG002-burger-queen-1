@@ -1,1 +1,34 @@
-<p>register works!</p>
+<section class="register-container">
+  <div class="register-logo-container">
+    <img class="logo-register" src="../../../assets/image/logo.png" alt="logo Burger Queen" />
+  </div>
+  <div class="register-form-container">
+    <form>
+      <input type="text" class="input-form-register" placeholder="Nombre" />
+      <input type="email" class="input-form-register" placeholder="Ingrese su correo electrónico" />
+      <input type="password" class="input-form-register" placeholder="Contraseña" />
+      <!-- <legend> -->
+        <p>Elija su perfil:</p>
+      <!-- </legend> -->
+      <div class="register-form-perfil">
+        <div class="register-perfil">
+          <input class="form-perfil" name="perfil" type="radio" value="mesero" id="radio1" checked />
+          <label for="radio1">Mesero</label>
+        </div>
+
+        <div class="register-perfil">
+          <input class="form-perfil" id="radio2" name="perfil" type="radio" value="cocinero" />
+          <label for="radio2">Cocinero</label>
+        </div>
+      </div>
+
+      <button class="button-register">REGISTRARTE</button>
+    </form>
+    <div>
+      <p class="text-register">
+        ¿Tienes una cuenta?
+        <a href="iniciarsesión">Inicia sesión</a>
+      </p>
+    </div>
+  </div>
+</section>
