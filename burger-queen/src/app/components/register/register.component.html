@@ -3,10 +3,26 @@
     <img class="logo-register" src="../../../assets/image/logo.png" alt="logo Burger Queen" />
   </div>
   <div class="register-form-container">
-    <form [formGroup]="formRegister" (ngSubmit)="getformRegister($event)">
+    <form [formGroup]="formRegister" novalidate (ngSubmit)="getRegister($event)">
+
       <input type="text" formControlName="name" class="input-form-register" placeholder="Nombre" />
-      <input type="email"  formControlName="email" class="input-form-register" placeholder="Ingrese su correo electrónico" />
+      <div *ngIf="formRegister.get('name')!.errors && formRegister.get('name')!.touched" class="text-error">
+        <p *ngIf="formRegister.get('name')!.hasError('required')"> El campo nombre es requerido </p>
+        <p *ngIf="formRegister.get('name')!.hasError('minlength')"> El nombre no puede ser menor a 10 caracteres </p>
+      </div>
+
+      <input type="email"  formControlName="email" class="input-form-register" placeholder="Ingrese su correo electrónico"/>
+      <div *ngIf="formRegister.get('email')!.errors && formRegister.get('email')!.touched" class="text-error">
+        <p *ngIf="formRegister.get('email')!.hasError('required')"> El campo email es requerido </p>
+        <p *ngIf="formRegister.get('email')!.hasError('email')"> ingrese un correo válido </p>
+      </div>
+     
       <input type="password" formControlName="password" class="input-form-register" placeholder="Contraseña" />
+      <div *ngIf="formRegister.get('password')!.errors && formRegister.get('password')!.touched" class="text-error">
+        <p *ngIf="formRegister.get('password')!.hasError('required')"> El campo password es requerido </p>
+        <p *ngIf="formRegister.get('password')!.hasError('minlength')"> El password no puede ser menor a 7 caracteres </p>
+        <p *ngIf="formRegister.get('password')!.hasError('maxlength')"> El password no puede ser mayor a 10 caracteres</p>
+      </div>
       <!-- <legend> -->
         <p>Elija su perfil:</p>
       <!-- </legend> -->
@@ -17,7 +33,7 @@
         </div>
 
         <div class="register-perfil">
-          <input class="form-perfil" ormControlName="cocinero" id="radio2" name="perfil" type="radio" value="cocinero" />
+          <input class="form-perfil" formControlName="cocinero" id="radio2" name="perfil" type="radio" value="cocinero" />
           <label for="radio2">Cocinero</label>
         </div>
       </div>

@@ -10,9 +10,9 @@ export class RegisterComponent implements OnInit {
 
   constructor() { }
   formRegister = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
+    name: new FormControl('', [Validators.required, Validators.minLength(10)]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(7)]),
     mesero: new FormControl('', Validators.required),
     cocinero: new FormControl('', Validators.required),
   });
@@ -20,9 +20,20 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getformRegister(event: Event) {
+  // getformRegister(event: Event) {
+  //   event.preventDefault();
+  //   console.log(this.formRegister.value)
+  // }
+  getRegister(event:Event){
     event.preventDefault();
-    console.log(this.formRegister.value)
-  }
+    if(this.formRegister.valid){
+      const valor= this.formRegister.value;
+      console.log(valor);
+    }
+      else{
+        this.formRegister.markAllAsTouched();
+      }
+    }
+  
 
 }
