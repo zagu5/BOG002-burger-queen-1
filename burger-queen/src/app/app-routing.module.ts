@@ -8,13 +8,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './views/login/login.component';
 
 const routes: Routes = [
-<<<<<<< Updated upstream
-  {path: '**', component: HomeComponent},
-  {path: 'home', component: HomeComponent},
-  {path:'register', component:RegisterComponent},
-  {path: 'mesero', component: MeseroComponent},
-  {path: 'cocinero', component: CocineroComponent},
-=======
 
   {path: '', component: LoginComponent},
 
@@ -43,7 +36,6 @@ const routes: Routes = [
   },
 
   {path: '**', redirectTo:''},
->>>>>>> Stashed changes
 ];
 
 @NgModule({

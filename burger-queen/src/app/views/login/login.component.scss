@@ -1,0 +1,121 @@
+@import "../../../variables.scss";
+
+.login-container{
+  width: 500px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 58px auto;
+  background: $gradienteBlack;
+  border-radius: 25px;
+}
+
+.login-logo-container{
+  width: 500px;
+  height: auto;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.logo{
+  width: 70%;
+  height: auto;
+}
+
+.login-form-container{
+  width: 500px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  form{
+    width: 70%;
+    height: 200px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    input{
+      width: 300px;
+      height: 40px;
+      margin: 0 auto 15px auto;
+      border-radius: 15px;
+      padding: 0px 12px;
+      font-size: 14px;
+
+      ::-webkit-input-placeholder{
+        color: $gradienteBlack;
+      }
+    }
+  }
+
+  .on-default{
+    border: 2px solid $yellow;
+  }
+
+  .on-error{
+    border: 2px solid $redBorder;
+  }
+
+  .on-success{
+    border: 2px solid $green;
+  }
+
+  .text-error{
+    width: 320px;
+    height: 40px;
+    margin: 0 auto 12px auto;
+    font-size: 12px;
+    border: 2px solid $redBorder;
+    border-radius: 10px;
+    background: $redBg;
+
+    p{
+      color: $redFonts;
+    }
+  }
+
+  div{
+    width: 70%;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 14px;
+
+    p{
+      color: $yellow;
+      font-weight: normal;
+    }
+
+    a{
+      text-decoration: none;
+      color: $yellow;
+      font-weight: 700;
+    }
+  }
+}
+
+.button-login{
+  width: 328px;
+  height: 44px;
+  background: $yellow;
+  margin:0 auto;
+  padding: 0px 12px;
+  border-radius: 15px;
+  border: 2px solid $yellow;
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+
+}
+
+.button-login:hover{
+  background-color: $black;
+  color: $yellow;
+}
