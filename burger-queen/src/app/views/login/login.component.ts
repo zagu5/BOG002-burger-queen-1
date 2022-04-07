@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
   errorUser: string = '';
 
-  // private userService : UserService
   constructor(private formBuilder:FormBuilder,
               private userService:UserService,
               private router: Router ) {
@@ -31,10 +30,9 @@ export class LoginComponent implements OnInit {
 
 
   authUser(params:auth) {
-    // Ir al backend
+    // IR AL BACKEND
     this.userService.postAuth(params)
     .subscribe(resp => {
-      console.log(this.userService.auth.rol, 'esto es el rol')
 
       if(resp === 'Valid password'){
         if(this.userService.auth.rol === 'admin'){
@@ -51,12 +49,11 @@ export class LoginComponent implements OnInit {
       }
       else{
         this.errorUser = resp.error;
-        console.log(resp.error)
       }
     })
   }
 
-
+  // FUNCTION DEL CLICK
   getLogin(event:Event){
     event.preventDefault();
     if(this.form.valid){

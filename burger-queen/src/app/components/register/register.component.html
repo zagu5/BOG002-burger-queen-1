@@ -16,7 +16,7 @@
         <p *ngIf="formRegister.get('email')!.hasError('required')"> El campo email es requerido </p>
         <p *ngIf="formRegister.get('email')!.hasError('email')"> ingrese un correo válido </p>
       </div>
-     
+
       <input type="password" formControlName="password" class="input-form-register" placeholder="Contraseña" />
       <div *ngIf="formRegister.get('password')!.errors && formRegister.get('password')!.touched" class="text-error">
         <p *ngIf="formRegister.get('password')!.hasError('required')"> El campo password es requerido </p>
@@ -28,12 +28,12 @@
       <!-- </legend> -->
       <div class="register-form-perfil">
         <div class="register-perfil">
-          <input class="form-perfil" formControlName="rol" name="perfil" type="radio" value="mesero" id="radio1" checked />
+          <input class="form-perfil" formControlName="rol" name="rol" type="radio" value="mesero" id="radio1" checked />
           <label for="radio1">Mesero</label>
         </div>
 
         <div class="register-perfil">
-          <input class="form-perfil" formControlName="rol" id="radio2" name="perfil" type="radio" value="cocinero" />
+          <input class="form-perfil" formControlName="rol" id="radio2" name="rol" type="radio" value="cocinero" />
           <label for="radio2">Cocinero</label>
         </div>
       </div>

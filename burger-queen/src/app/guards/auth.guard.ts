@@ -22,7 +22,6 @@ export class AuthGuard implements CanLoad, CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean  {
-    console.log(localStorage.getItem('token'),'existe el token')
     if (localStorage.getItem('token')) {
       return true;
     } else {
@@ -35,7 +34,6 @@ export class AuthGuard implements CanLoad, CanActivate {
     route: Route,
     segments: UrlSegment[]): Observable<boolean>  | Promise<boolean> | boolean {
     // Si el usuario existe puede ingresar
-    console.log(localStorage.getItem('token'),'existe el token')
     if(localStorage.getItem('token')){
         return true;
     } else {

@@ -17,14 +17,6 @@ export class UserService {
   }
   constructor(private http: HttpClient){}
 
-  // OBTENER UN USUARIO POR ID
-  // getUserId(){
-  //   const url = `${this.baseUrl}/users/1`;
-  //   const headers = new HttpHeaders()
-  //   .set('x-token', localStorage.getItem('token') || '')
-  //   return this.http.get(url, {headers});
-  // }
-
   // AUTENTICAR UN USUARIO
   postAuth(params:auth){
     const url = `${this.baseUrl}auth`;
@@ -33,9 +25,6 @@ export class UserService {
     .pipe(
       tap( resp => {
         // GUARDAR TOKEN EN EL LOCALSOTRAGE
-        localStorage.setItem('token', resp.token);
-        sessionStorage.setItem('token', resp.token);
-        console.log(resp.user, 'respTap')
         if(resp.user.email === params.email){
           localStorage.setItem('token', resp.token);
           this.authUser = {
@@ -46,25 +35,9 @@ export class UserService {
             photo: resp.user.photo,
           }
         }
-        console.log(this.authUser, 'authUser')
       }),
       map( resp => resp.message),
       catchError(err => of(err.error))
     )
   }
-
-  // //VALIDAR TOKEN
-  // validarToken(){
-  //   const url = `${this.baseUrl}auth`;
-  //   const headers = new HttpHeaders()
-  //   .set('x-token', localStorage.getItem('token') || '')
-  //   return this.http.get(url, {headers});
-  // }
-
-
-  //ADMIN CREAR UN USUARIO
-  // postUser(){
-
-  // }
-
 }
