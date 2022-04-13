@@ -1,0 +1,56 @@
+<header>
+  <nav>
+    <section class="link-nav-container">
+
+      <a class="logo" *ngIf="rol === 'mesero'" routerLink="/menu" routerLinkActive="active">
+        <img src='../../../assets/image/logo2.png' width= "50px" height= "50px" alt ='Logo Burger Queen'>
+      </a>
+
+      <a class="logo" *ngIf="rol === 'cocinero'" routerLink="/pedidos" routerLinkActive="active">
+        <img src='../../../assets/image/logo2.png' width= "50px" height= "50px" alt ='Logo Burger Queen'>
+      </a>
+
+    <div class="link-nav">
+
+        <!-- MOSTRAR SI EL ROL ES MESERO -->
+        <div *ngIf="rol === 'mesero'"  class="link-item">
+          <a class="link" routerLink="/menu" routerLinkActive="active">Menu</a>
+        </div>
+
+        <div class="link-item">
+          <a class="link" routerLink="/pedidos" routerLinkActive="active">Pedidos</a>
+        </div>
+
+        <!-- MOSTRAR SI EL ROL ES COCINERO -->
+        <div *ngIf="rol === 'cocinero'"  class="link-item">
+          <a class="link" routerLink="/pedidos-listos" routerLinkActive="active">Pedidos Listos</a>
+        </div>
+
+        <div class="link-item">
+          <a class="link" routerLink="/historicos" routerLinkActive="active">Históricos</a>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="user-perfil-container">
+      <button class="button-user-perfil" (click)="showPerfil()">
+        <span> {{ perfil.username }} </span>
+        <img src="{{ image }}" width="45px" height= "45px" alt='Photo usuario'/>
+      </button>
+    </section>
+  </nav>
+
+  <!-- MENU DESPLEGABLE -->
+  <div [ngClass]= "{'showDisplay': !selectPerfil, 'menu-desplegable-container': selectPerfil}">
+    <button class='buton-menu-desplegable' (click)="openPerfil()">
+      <img src="../../../assets/image/perfil.png" class = 'icon-button-menu-desplegable' alt="perfil"/>
+      <span> Ver tu perfil </span>
+    </button>
+
+    <button class='buton-menu-desplegable' (click)="signOut()">
+      <img src="../../../assets/image/cerrar-sesion.png" class = 'icon-button-menu-desplegable' alt="cerrar sesión"/>
+      <span> Cerrar sesión </span>
+    </button>
+  </div>
+</header>

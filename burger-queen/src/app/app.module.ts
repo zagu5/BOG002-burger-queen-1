@@ -13,6 +13,12 @@ import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
 import { UserService } from './services/users.service';
+import { HeaderComponent } from './components/header/header.component';
+import { MenuComponent } from './views/menu/menu.component';
+import { PedidosComponent } from './views/pedidos/pedidos.component';
+import { HistoricosComponent } from './views/historicos/historicos.component';
+import { PerfilComponent } from './views/perfil/perfil.component';
+import { PedidosListosComponent } from './views/pedidos-listos/pedidos-listos.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +27,13 @@ import { UserService } from './services/users.service';
     MeseroComponent,
     CocineroComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent,
+    MenuComponent,
+    PedidosComponent,
+    HistoricosComponent,
+    PerfilComponent,
+    PedidosListosComponent,
   ],
   imports: [
     BrowserModule,

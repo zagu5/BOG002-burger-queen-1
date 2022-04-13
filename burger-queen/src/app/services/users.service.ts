@@ -34,6 +34,8 @@ export class UserService {
             rol: resp.user.roles,
             photo: resp.user.photo,
           }
+          const user = JSON.stringify(this.authUser);
+          localStorage.setItem('user', user);
         }
       }),
       map( resp => resp.message),

@@ -1,3 +1,4 @@
+import { PedidosListosComponent } from './views/pedidos-listos/pedidos-listos.component';
 import { AuthGuard } from '../app/guards/auth.guard';
 import { NgModule } from '@angular/core';
 
@@ -7,6 +8,10 @@ import { HomeComponent } from './views/home/home.component';
 import { MeseroComponent } from './views/mesero/mesero.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './views/login/login.component';
+import { MenuComponent } from './views/menu/menu.component';
+import { PerfilComponent } from './views/perfil/perfil.component';
+import { HistoricosComponent } from './views/historicos/historicos.component';
+import { PedidosComponent } from './views/pedidos/pedidos.component';
 
 const routes: Routes = [
 
@@ -32,6 +37,36 @@ const routes: Routes = [
 
   {
     path: 'cocinero', component: CocineroComponent,
+    canLoad: [ AuthGuard ],
+    canActivate: [ AuthGuard ]
+  },
+
+  {
+    path: 'menu', component: MenuComponent,
+    // canLoad: [ AuthGuard ],
+    // canActivate: [ AuthGuard ]
+  },
+
+  {
+    path: 'pedidos', component: PedidosComponent,
+    // canLoad: [ AuthGuard ],
+    // canActivate: [ AuthGuard ]
+  },
+
+  {
+    path: 'historicos', component: HistoricosComponent,
+    canLoad: [ AuthGuard ],
+    canActivate: [ AuthGuard ]
+  },
+
+  {
+    path: 'pedidos-listos', component: PedidosListosComponent,
+    // canLoad: [ AuthGuard ],
+    // canActivate: [ AuthGuard ]
+  },
+
+  {
+    path: 'perfil', component: PerfilComponent,
     canLoad: [ AuthGuard ],
     canActivate: [ AuthGuard ]
   },

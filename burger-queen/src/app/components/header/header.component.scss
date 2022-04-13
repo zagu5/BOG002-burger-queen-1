@@ -1,0 +1,134 @@
+@import "../../../variables.scss";
+
+header {
+  background: $black;
+  width: 100%;
+  height: 70px;
+}
+
+nav {
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.link-nav-container {
+  width: 70%;
+  display: flex;
+}
+
+.logo {
+  padding-top: 10px;
+}
+
+.link-nav {
+  // width: 80%;
+  // display: flex;
+  // margin: auto 0px;
+  // justify-content: space-between;
+  // margin: auto 0px;
+  // text-align: center;
+  // align-items: center;
+  // // margin-left: 15px;
+  width: 337px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+}
+
+.link-item {
+  width: 120px;
+  height: 50px;
+  display: contents;
+  text-align: center;
+
+  .link {
+    text-decoration: none;
+    color: $white;
+    font-family: 'Lobster', cursive;
+    font-size: 1.4rem;
+  }
+}
+
+.link:focus, .link:hover {
+  border-bottom: 2px solid $yellow;
+}
+
+.user-perfil-container {
+  width: 30%;
+  display: contents;
+}
+
+.button-user-perfil{
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: transparent;
+  border-left: 2px solid  $white;
+
+  span {
+    width: 100px;
+    color: $white;
+    font-family: "Lobster", cursive;
+    font-weight: 100;
+    font-size: 1.2rem;
+  }
+
+}
+
+.button-user-perfil:hover, .button-user-perfil:focus {
+  background: $gradientYellow;
+}
+
+.menu-desplegable-container {
+  width: 200px;
+  height: 120px;
+  background: $yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0px 0px 10px 10px;
+  position: relative;
+  float: right;
+  margin-top: 5px;
+}
+
+.showDisplay {
+  display: none;
+}
+
+.buton-menu-desplegable{
+  width: 150px;
+  height: 50px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  background: transparent;
+  border: transparent;
+  border-bottom: 1px solid $black;
+  cursor: pointer;
+}
+
+.icon-button-menu-desplegable{
+  width: 15px;
+  height: 15px;
+  float: left;
+}
+
+.buton-menu-desplegable:hover {
+  background: $white;
+}
+
+// QUERIES
+@media (min-width: 1074px) {
+  .menu-desplegable-container {
+    width: 220px;
+  }
+}
